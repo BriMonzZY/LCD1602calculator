@@ -24,7 +24,6 @@
  * 
  *
  */
-
 #define __MAIN_C
 #include "config.h"
 
@@ -70,11 +69,10 @@ void timer0() interrupt 1
  */
 void timer0Init()
 {
-    EA = 1;
-    TMOD = 0x01; //设置 T0 为模式 1
-    TH0 = 0xfc; //为 T0 赋初值 0xFC67，定时 1ms
-    TL0 = 0x66;
-    ET0 = 1; //使能 T0 中断
-    TR0 = 1; //启动 T0
+	EA = 1;
+	TMOD = 0x01; //设置 T0 为模式 1
+	TH0 = 0xfc; //为 T0 赋初值 0xFC67，定时 1ms
+	TL0 = 0x66;
+	ET0 = 1; //使能 T0 中断
+	TR0 = 1; //启动 T0
 }
-

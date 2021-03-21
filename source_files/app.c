@@ -1,16 +1,95 @@
 #include "config.h"
 
 
+void key_0()
+{
+	
+}
+
+void key_1()
+{
+
+}
+
+void key_2()
+{
+	
+}
+
+void key_3()
+{
+	
+}
+void key_4()
+{
+	
+}
+
+void key_5()
+{
+	
+}
+
+void key_6()
+{
+	
+}
+
+void key_7()
+{
+	
+}
+
+void key_8()
+{
+	
+}
+
+void key_9()
+{
+	
+}
+
+void key_10()
+{
+	
+}
+
+void key_11()
+{
+	
+}
+
+void key_12()
+{
+	
+}
+
+void key_13()
+{
+	
+}
+
+void key_14()
+{
+	
+}
+
+void key_15()
+{
+	
+}
 
 
 
 
 
-
-
-
-
-
+/**
+ * @brief 	按键功能映射函数
+ * 
+ * @param 	keyvalue 
+ * @return 	无
+ */
 void KeyAction(uchar keyvalue) {
 	switch (keyvalue)
 	{

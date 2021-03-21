@@ -72,3 +72,12 @@ void keyscan()
 			default: break;
 	}
 }
+
+
+void beep()
+{
+	BUZZER = 0;
+	int i ;
+	for(i = 0; i < 100; i++);
+	BUZZER = 1;
+}
