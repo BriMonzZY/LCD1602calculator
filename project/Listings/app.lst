@@ -1,0 +1,50 @@
+C51 COMPILER V9.60.0.0   APP                                                               02/18/2021 17:49:41 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE APP
+OBJECT MODULE PLACED IN ..\output\app.obj
+COMPILER INVOKED BY: D:\app\keilC51\C51\BIN\C51.EXE ..\source_files\app.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PR
+                    -INT(.\Listings\app.lst) TABS(2) OBJECT(..\output\app.obj)
+
+line level    source
+
+   1          #include "config.h"
+   2          
+   3          
+   4          
+   5          
+   6          
+   7          
+   8          
+   9          
+  10          
+  11          
+  12          
+  13          
+  14          void KeyAction(uchar keyvalue) {
+  15   1        switch (keyvalue)
+  16   1        {
+  17   2          case 0: key_0(keyvalue); keyjudge = 1; break;
+*** WARNING C206 IN LINE 17 OF ..\source_files\app.c: 'key_0': missing function-prototype
+*** ERROR C267 IN LINE 17 OF ..\source_files\app.c: 'key_0': requires ANSI-style prototype
+*** ERROR C202 IN LINE 17 OF ..\source_files\app.c: 'keyjudge': undefined identifier
+  18   2          case 1: key_1(keyvalue); keyjudge = 1; break; 
+  19   2          case 2: key_2(keyvalue); keyjudge = 1; break; 
+  20   2          case 3: key_3(keyvalue); keyjudge = 1; break;
+  21   2          case 4: key_4(keyvalue); keyjudge = 1; break;
+  22   2          case 5: key_5(keyvalue); keyjudge = 1; break;
+  23   2          case 6: key_6(keyvalue); keyjudge = 1; break;
+  24   2          case 7: key_7(keyvalue); keyjudge = 1; break;
+  25   2          case 8: key_8(keyvalue); keyjudge = 1; break;
+  26   2          case 9: key_9(keyvalue); keyjudge = 1; break;
+  27   2          case 10: key_10(); keyjudge = 1; break;
+  28   2          case 11: key_11(); keyjudge = 1; break;
+  29   2          case 12: key_12(); keyjudge = 1; break;
+  30   2          case 13: key_13(); keyjudge = 1; break;
+  31   2          case 14: key_14(); keyjudge = 1; break;
+  32   2          case 15: key_15(); keyjudge = 1; break;   
+  33   2          default: break;
+  34   2        }
+  35   1      }
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  2 ERROR(S)
