@@ -1,4 +1,6 @@
 "..\output\main.obj",
-"..\output\lcd1602.obj" 
+"..\output\lcd1602.obj",
+"..\output\app.obj",
+"..\output\key.obj" 
 TO "..\output\¼ÆËãÆ÷" 
-PRINT(".\Listings\¼ÆËãÆ÷.m51") RAMSIZE(256) 
+PRINT(".\Listings\¼ÆËãÆ÷.m51")

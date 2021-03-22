@@ -11,10 +11,10 @@
 #include <stdio.h>
 
 /*用户文件*/
-#include "main.h"
-#include "app.h"
-#include "key.h"
-#include "lcd1602.h"
+//#include "main.h"
+//#include "app.h"
+//#include "key.h"
+//#include "lcd1602.h"
 
 #define MAIN_Fosc		11059200UL	//宏定义主时钟HZ  11.0592MHz
 

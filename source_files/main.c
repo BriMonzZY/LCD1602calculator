@@ -22,15 +22,30 @@
  *
  * 键值对应：
  * 
+ * 0	1		2		3 
+ * 4 	5	 	6		7
+ * 8 	9 	10	11
+ * 12	13	14	15
  *
  */
 #define __MAIN_C
 #include "config.h"
+#include "main.h"
+#include "lcd1602.h"
+#include "app.h"
+#include "key.h"
+
+
+
 
 void timer0Init();
+bit keyjudge = 0;
+uint8 cursor1;
+uint8 cursor2; // LCD 第一行位置指针， 第二行位置指针
 
-uint8 pointer1, pointer2； // LCD 第一行位置指针， 第二行位置指针
-
+uchar backup[4][4] = { //初始化按键值备份
+			{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}
+};
 
 
 /**
@@ -41,9 +56,11 @@ uint8 pointer1, pointer2； // LCD 第一行位置指针， 第二行位置指针
 void main()
 {
 	timer0Init(); // 初始化定时器0中断
+	Init_LCD1602();
+	LCD1602_Clear_Screen();
+	LCD1602_Dis_Str(0, 0, "Welcome");
 	while(1) {
 		keydriver(); // 循环检测按键
-		
 		
 	}
 }

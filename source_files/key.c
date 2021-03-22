@@ -1,4 +1,8 @@
 #include "config.h"
+#include "main.h"
+#include "lcd1602.h"
+#include "app.h"
+#include "key.h"
 
 
 uchar KeySta[4][4] = { //全部矩阵按键的当前状态
@@ -73,11 +77,17 @@ void keyscan()
 	}
 }
 
+void delay_500us(void)   //误差 -0.868055555556us
+{
+    unsigned char a,b;
+    for(b=1;b>0;b--)
+        for(a=227;a>0;a--);
+}
+
 
 void beep()
 {
 	BUZZER = 0;
-	int i ;
-	for(i = 0; i < 100; i++);
+	delay_500us();
 	BUZZER = 1;
 }

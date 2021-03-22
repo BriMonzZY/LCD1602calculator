@@ -1,81 +1,84 @@
 #include "config.h"
+#include "main.h"
+#include "lcd1602.h"
+#include "app.h"
+#include "key.h"
 
-
-void key_0()
+void key_0(uint8 keyvalue)  // 7
 {
 	
 }
 
-void key_1()
+void key_1(uint8 keyvalue)  // 8
 {
 
 }
 
-void key_2()
-{
-	
-}
-
-void key_3()
-{
-	
-}
-void key_4()
+void key_2(uint8 keyvalue)  // 9
 {
 	
 }
 
-void key_5()
+void key_3(uint8 keyvalue)  // ¡Â
+{
+	
+}
+void key_4(uint8 keyvalue)  // 4
 {
 	
 }
 
-void key_6()
+void key_5(uint8 keyvalue)  // 5
 {
 	
 }
 
-void key_7()
+void key_6(uint8 keyvalue)  // 6
 {
 	
 }
 
-void key_8()
+void key_7(uint8 keyvalue)  // ¡Á
 {
 	
 }
 
-void key_9()
+void key_8(uint8 keyvalue)  // 1
 {
 	
 }
 
-void key_10()
+void key_9(uint8 keyvalue)  // 2
 {
 	
 }
 
-void key_11()
+void key_10(uint8 keyvalue)  // 3
 {
 	
 }
 
-void key_12()
+void key_11(uint8 keyvalue)  // -
 {
 	
 }
 
-void key_13()
+void key_12(uint8 keyvalue)  // back
 {
 	
 }
 
-void key_14()
+void key_13(uint8 keyvalue)  // 0
 {
 	
 }
 
-void key_15()
+void key_14(uint8 keyvalue)  // .
+{
+	
+}
+
+void key_15(uint8 keyvalue)  // +
 {
 	
 }
@@ -103,12 +106,12 @@ void KeyAction(uchar keyvalue) {
 		case 7: key_7(keyvalue); keyjudge = 1; break;
 		case 8: key_8(keyvalue); keyjudge = 1; break;
 		case 9: key_9(keyvalue); keyjudge = 1; break;
-		case 10: key_10(); keyjudge = 1; break;
-		case 11: key_11(); keyjudge = 1; break;
-		case 12: key_12(); keyjudge = 1; break;
-		case 13: key_13(); keyjudge = 1; break;
-		case 14: key_14(); keyjudge = 1; break;
-		case 15: key_15(); keyjudge = 1; break;		
+		case 10: key_10(keyvalue); keyjudge = 1; break;
+		case 11: key_11(keyvalue); keyjudge = 1; break;
+		case 12: key_12(keyvalue); keyjudge = 1; break;
+		case 13: key_13(keyvalue); keyjudge = 1; break;
+		case 14: key_14(keyvalue); keyjudge = 1; break;
+		case 15: key_15(keyvalue); keyjudge = 1; break;		
 		default: break;
 	}
 }

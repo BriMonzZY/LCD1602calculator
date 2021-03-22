@@ -1,4 +1,8 @@
 #include "config.h"
+#include "main.h"
+#include "lcd1602.h"
+#include "app.h"
+#include "key.h"
 
 
 

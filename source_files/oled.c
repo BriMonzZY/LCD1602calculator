@@ -1,4 +1,7 @@
 #include "config.h"
+#include "main.h"
+#include "lcd1602.h"
+#include "app.h"
 #include "oled.h"
 #include "oledfont.h"  	 
 //#include "delay.h"

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   KEY                                                               03/21/2021 15:45:44 PAGE 1   
+C51 COMPILER V9.60.0.0   KEY                                                               03/22/2021 13:16:47 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE KEY
@@ -9,101 +9,114 @@ COMPILER INVOKED BY: D:\app\keilC51\C51\BIN\C51.EXE ..\source_files\key.c OPTIMI
 line level    source
 
    1          #include "config.h"
-*** ERROR C141 IN LINE 4 OF ..\source_files\app.h: syntax error near 'keyvalue', expected ')'
-*** ERROR C141 IN LINE 6 OF ..\source_files\lcd1602.h: syntax error near '8', expected ')'
-*** ERROR C141 IN LINE 7 OF ..\source_files\lcd1602.h: syntax error near 'x', expected ')'
-*** ERROR C141 IN LINE 8 OF ..\source_files\lcd1602.h: syntax error near 'x', expected ')'
-   2          
-   3          
-   4          uchar KeySta[4][4] = { //È«²¿¾ØÕó°´¼üµÄµ±Ç°×´Ì¬
-   5              {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}
-   6          };
-   7          uchar keyvalue = 0;  //¼üÖµ
-   8          
-   9          
-  10          /**
-  11           * @brief ¾ØÕó°´¼üÉ¨Ãèº¯Êý£¨ÔÚwhile£¨1£©ÖÐµ÷ÓÃ£©
-  12           * 
-  13           * @param  ÎÞ 
-  14           * @return ÎÞ 
-  15           */
-  16          void keydriver() { 
-  17   1        uchar i, j, gg;//Ñ­»·±äÁ¿
-  18   1        for (i=0; i<4; i++){
-  19   2          for (j=0; j<4; j++){
-  20   3              if (backup[i][j] != KeySta[i][j]){//¼ì²â°´¼ü¶¯×÷
-*** ERROR C202 IN LINE 20 OF ..\source_files\key.c: 'backup': undefined identifier
-  21   4                if (backup[i][j] != 0){
-*** ERROR C202 IN LINE 21 OF ..\source_files\key.c: 'backup': undefined identifier
-  22   5                  keyvalue = i * 4 + j; // ¼ÆËã¼üÖµ
-  23   5                  KeyAction(keyvalue); // ¸ù¾Ý¼üÖµÑ¡Ôñ°´¼ü¶¯×÷
-  24   5                }//if (backup[i][j] != 0) °´¼ü°´ÏÂÊ±Ö´ÐÐ¶¯×÷
-  25   4                backup[i][j] = KeySta[i][j]; //¸üÐÂÇ°Ò»´ÎµÄ±¸·ÝÖµ
-*** ERROR C202 IN LINE 25 OF ..\source_files\key.c: 'backup': undefined identifier
-  26   4              }
-  27   3          }
-  28   2        }
-  29   1      }
-  30          
-  31          
-  32          /**
-  33           * @brief   ¾ØÕó°´¼üÉ¨Ãè¼°Ïû¶¶º¯Êý
-  34           * 
-  35           * @param   ÎÞ 
-  36           * @return  ÎÞ 
-  37           */
-  38          void keyscan()
-  39          { //ÔÚÖÐ¶ÏÖÐµ÷ÓÃ
-  40   1        uchar m;
-  41   1        static uchar keyout = 0; //¾ØÕó°´¼üÉ¨ÃèÊä³öË÷Òý
-  42   1      
-  43   1        static uchar keybuf[4][4] = { //¾ØÕó°´¼üÉ¨Ãè»º³åÇø
-  44   1          {0xFF, 0xFF, 0xFF, 0xFF}, {0xFF, 0xFF, 0xFF, 0xFF},
-  45   1          {0xFF, 0xFF, 0xFF, 0xFF}, {0xFF, 0xFF, 0xFF, 0xFF}
-  46   1        };
-  47   1        /*Ïû¶¶²¢¸üÐÂ°´¼ü×´Ì¬*/
-C51 COMPILER V9.60.0.0   KEY                                                               03/21/2021 15:45:44 PAGE 2   
+   2          #include "main.h"
+   3          #include "lcd1602.h"
+   4          #include "app.h"
+   5          #include "key.h"
+   6          
+   7          
+   8          uchar KeySta[4][4] = { //È«²¿¾ØÕó°´¼üµÄµ±Ç°×´Ì¬
+   9              {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}
+  10          };
+  11          uchar keyvalue = 0;  //¼üÖµ
+  12          
+  13          
+  14          /**
+  15           * @brief ¾ØÕó°´¼üÉ¨Ãèº¯Êý£¨ÔÚwhile£¨1£©ÖÐµ÷ÓÃ£©
+  16           * 
+  17           * @param  ÎÞ 
+  18           * @return ÎÞ 
+  19           */
+  20          void keydriver() { 
+  21   1        uchar i, j, gg;//Ñ­»·±äÁ¿
+  22   1        for (i=0; i<4; i++){
+  23   2          for (j=0; j<4; j++){
+  24   3              if (backup[i][j] != KeySta[i][j]){//¼ì²â°´¼ü¶¯×÷
+  25   4                if (backup[i][j] != 0){
+  26   5                  keyvalue = i * 4 + j; // ¼ÆËã¼üÖµ
+  27   5                  KeyAction(keyvalue); // ¸ù¾Ý¼üÖµÑ¡Ôñ°´¼ü¶¯×÷
+  28   5                }//if (backup[i][j] != 0) °´¼ü°´ÏÂÊ±Ö´ÐÐ¶¯×÷
+  29   4                backup[i][j] = KeySta[i][j]; //¸üÐÂÇ°Ò»´ÎµÄ±¸·ÝÖµ
+  30   4              }
+  31   3          }
+  32   2        }
+  33   1      }
+*** WARNING C280 IN LINE 21 OF ..\source_files\key.c: 'gg': unreferenced local variable
+  34          
+  35          
+  36          /**
+  37           * @brief   ¾ØÕó°´¼üÉ¨Ãè¼°Ïû¶¶º¯Êý
+  38           * 
+  39           * @param   ÎÞ 
+  40           * @return  ÎÞ 
+  41           */
+  42          void keyscan()
+  43          { //ÔÚÖÐ¶ÏÖÐµ÷ÓÃ
+  44   1        uchar m;
+  45   1        static uchar keyout = 0; //¾ØÕó°´¼üÉ¨ÃèÊä³öË÷Òý
+  46   1      
+  47   1        static uchar keybuf[4][4] = { //¾ØÕó°´¼üÉ¨Ãè»º³åÇø
+  48   1          {0xFF, 0xFF, 0xFF, 0xFF}, {0xFF, 0xFF, 0xFF, 0xFF},
+  49   1          {0xFF, 0xFF, 0xFF, 0xFF}, {0xFF, 0xFF, 0xFF, 0xFF}
+  50   1        };
+  51   1        /*Ïû¶¶²¢¸üÐÂ°´¼ü×´Ì¬*/
+  52   1        //½«Ò»ÐÐµÄ 4 ¸ö°´¼üÖµÒÆÈë»º³åÇø
+  53   1        keybuf[keyout][0] = (keybuf[keyout][0] << 1) | KEY_IN_1;
+C51 COMPILER V9.60.0.0   KEY                                                               03/22/2021 13:16:47 PAGE 2   
 
-  48   1        //½«Ò»ÐÐµÄ 4 ¸ö°´¼üÖµÒÆÈë»º³åÇø
-  49   1        keybuf[keyout][0] = (keybuf[keyout][0] << 1) | KEY_IN_1;
-  50   1        keybuf[keyout][1] = (keybuf[keyout][1] << 1) | KEY_IN_2;
-  51   1        keybuf[keyout][2] = (keybuf[keyout][2] << 1) | KEY_IN_3;
-  52   1        keybuf[keyout][3] = (keybuf[keyout][3] << 1) | KEY_IN_4;
-  53   1        //Ïû¶¶ºó¸üÐÂ°´¼ü×´Ì¬
-  54   1        for (m = 0; m < 4; m++){ //Ã¿ÐÐ 4 ¸ö°´¼ü£¬ËùÒÔÑ­»· 4 ´Î
-  55   2            if ((keybuf[keyout][m] & 0x0F) == 0x00){    //Á¬Ðø 4 ´ÎÉ¨ÃèÖµÎª 0£¬¼´ 4*4ms ÄÚ¶¼ÊÇ°´ÏÂ×´Ì¬Ê±£¬¿ÉÈÏÎª°´¼
+  54   1        keybuf[keyout][1] = (keybuf[keyout][1] << 1) | KEY_IN_2;
+  55   1        keybuf[keyout][2] = (keybuf[keyout][2] << 1) | KEY_IN_3;
+  56   1        keybuf[keyout][3] = (keybuf[keyout][3] << 1) | KEY_IN_4;
+  57   1        //Ïû¶¶ºó¸üÐÂ°´¼ü×´Ì¬
+  58   1        for (m = 0; m < 4; m++){ //Ã¿ÐÐ 4 ¸ö°´¼ü£¬ËùÒÔÑ­»· 4 ´Î
+  59   2            if ((keybuf[keyout][m] & 0x0F) == 0x00){    //Á¬Ðø 4 ´ÎÉ¨ÃèÖµÎª 0£¬¼´ 4*4ms ÄÚ¶¼ÊÇ°´ÏÂ×´Ì¬Ê±£¬¿ÉÈÏÎª°´¼
              -üÒÑÎÈ¶¨µÄ°´ÏÂ
-  56   3                KeySta[keyout][m] = 0;
-  57   3            }
-  58   2            else if ((keybuf[keyout][m] & 0x0F) == 0x0F){    //Á¬Ðø 4 ´ÎÉ¨ÃèÖµÎª 1£¬¼´ 4*4ms ÄÚ¶¼ÊÇµ¯Æð×´Ì¬Ê±£¬¿ÉÈÏ
+  60   3                KeySta[keyout][m] = 0;
+  61   3            }
+  62   2            else if ((keybuf[keyout][m] & 0x0F) == 0x0F){    //Á¬Ðø 4 ´ÎÉ¨ÃèÖµÎª 1£¬¼´ 4*4ms ÄÚ¶¼ÊÇµ¯Æð×´Ì¬Ê±£¬¿ÉÈÏ
              -Îª°´¼üÒÑÎÈ¶¨µÄµ¯Æð
-  59   3                KeySta[keyout][m] = 1;
-  60   3            }
-  61   2        }
-  62   1        
-  63   1        /*½øÐÐ¾ØÕó°´¼üÉ¨Ãè*/
-  64   1        //Ö´ÐÐÏÂÒ»´ÎµÄÉ¨ÃèÊä³ö
-  65   1        keyout++; //Êä³öË÷ÒýµÝÔö
-  66   1        keyout = keyout & 0x03; //Ë÷ÒýÖµ¼Óµ½ 4 ¼´¹éÁã
-  67   1        switch (keyout){ //¸ù¾ÝË÷Òý£¬ÊÍ·Åµ±Ç°Êä³öÒý½Å£¬À­µÍÏÂ´ÎµÄÊä³öÒý½Å
-  68   2            case 0: KEY_OUT_4 = 1; KEY_OUT_1 = 0; break;
-  69   2            case 1: KEY_OUT_1 = 1; KEY_OUT_2 = 0; break;
-  70   2            case 2: KEY_OUT_2 = 1; KEY_OUT_3 = 0; break;
-  71   2            case 3: KEY_OUT_3 = 1; KEY_OUT_4 = 0; break;
-  72   2            default: break;
-  73   2        }
-  74   1      }
-  75          
-  76          
-  77          void beep()
-  78          {
-  79   1        BUZZER = 0;
-  80   1        int i ;
-*** ERROR C141 IN LINE 80 OF ..\source_files\key.c: syntax error near 'int', expected '__asm'
-*** ERROR C202 IN LINE 80 OF ..\source_files\key.c: 'i': undefined identifier
-  81   1        for(i = 0; i < 100; i++);
-*** ERROR C202 IN LINE 81 OF ..\source_files\key.c: 'i': undefined identifier
-  82   1        BUZZER = 1;
-  83   1      }
+  63   3                KeySta[keyout][m] = 1;
+  64   3            }
+  65   2        }
+  66   1        
+  67   1        /*½øÐÐ¾ØÕó°´¼üÉ¨Ãè*/
+  68   1        //Ö´ÐÐÏÂÒ»´ÎµÄÉ¨ÃèÊä³ö
+  69   1        keyout++; //Êä³öË÷ÒýµÝÔö
+  70   1        keyout = keyout & 0x03; //Ë÷ÒýÖµ¼Óµ½ 4 ¼´¹éÁã
+  71   1        switch (keyout){ //¸ù¾ÝË÷Òý£¬ÊÍ·Åµ±Ç°Êä³öÒý½Å£¬À­µÍÏÂ´ÎµÄÊä³öÒý½Å
+  72   2            case 0: KEY_OUT_4 = 1; KEY_OUT_1 = 0; break;
+  73   2            case 1: KEY_OUT_1 = 1; KEY_OUT_2 = 0; break;
+  74   2            case 2: KEY_OUT_2 = 1; KEY_OUT_3 = 0; break;
+  75   2            case 3: KEY_OUT_3 = 1; KEY_OUT_4 = 0; break;
+  76   2            default: break;
+  77   2        }
+  78   1      }
+  79          
+  80          void delay_500us(void)   //Îó²î -0.868055555556us
+  81          {
+  82   1          unsigned char a,b;
+  83   1          for(b=1;b>0;b--)
+  84   1              for(a=227;a>0;a--);
+  85   1      }
+  86          
+  87          
+  88          void beep()
+  89          {
+  90   1        BUZZER = 0;
+  91   1        delay_500us();
+  92   1        BUZZER = 1;
+  93   1      }
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  10 ERROR(S)
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    373    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     34       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -19,54 +19,43 @@ CPU DLL:         S8051.DLL V3.122.0.0
 Dialog DLL:      DP51.DLL V2.67.0.0 
 <h2>Project:</h2>
 D:\_软件项目\51\project\LCD1602计算器\project\计算器.uvproj
-Project File Date:  02/18/2021
+Project File Date:  03/22/2021
 
 <h2>Output:</h2>
-Build target 'Target 1'
+Rebuild target 'Target 1'
 compiling main.c...
-..\source_files\app.h(4): error C141: syntax error near 'keyvalue', expected ')'
-..\source_files\lcd1602.h(6): error C141: syntax error near '8', expected ')'
-..\source_files\lcd1602.h(7): error C141: syntax error near 'x', expected ')'
-..\source_files\lcd1602.h(8): error C141: syntax error near 'x', expected ')'
-..\source_files\main.c(32): error C100: unprintable character 0xA3 skipped
-..\source_files\main.c(32): error C100: unprintable character 0xBB skipped
-..\source_files\main.c(41): error C141: syntax error near 'void', expected ';'
-..\source_files\main.c(42): error C141: syntax error near '{', expected ';'
-..\source_files\main.c(43): error C231: 'timer0Init': redefinition
-..\source_files\main.c(44): error C141: syntax error near 'while', expected 'hdata'
-..\source_files\main.c(44): error C141: syntax error near '1', expected 'hdata'
-..\source_files\main.c(45): error C231: 'keydriver': redefinition
-..\source_files\main.c(48): error C141: syntax error near '}', expected 'hdata'
 compiling lcd1602.c...
-..\source_files\app.h(4): error C141: syntax error near 'keyvalue', expected ')'
-..\source_files\lcd1602.h(6): error C141: syntax error near '8', expected ')'
-..\source_files\lcd1602.h(7): error C141: syntax error near 'x', expected ')'
-..\source_files\lcd1602.h(8): error C141: syntax error near 'x', expected ')'
-..\source_files\lcd1602.c(107): error C236: '_LCD1602_Set_Cursor': different length of parameter lists
-..\source_files\lcd1602.c(123): error C236: '_LCD1602_Dis_OneChar': different length of parameter lists
-..\source_files\lcd1602.c(139): error C236: '_LCD1602_Dis_Str': different length of parameter lists
 compiling app.c...
-..\source_files\app.h(4): error C141: syntax error near 'keyvalue', expected ')'
-..\source_files\lcd1602.h(6): error C141: syntax error near '8', expected ')'
-..\source_files\lcd1602.h(7): error C141: syntax error near 'x', expected ')'
-..\source_files\lcd1602.h(8): error C141: syntax error near 'x', expected ')'
+..\source_files\app.c(7): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(12): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(17): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(22): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(26): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(31): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(36): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(41): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(46): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(51): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(56): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(61): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(66): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(71): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(76): warning C280: 'keyvalue': unreferenced local variable
+..\source_files\app.c(81): warning C280: 'keyvalue': unreferenced local variable
 compiling key.c...
-..\source_files\app.h(4): error C141: syntax error near 'keyvalue', expected ')'
-..\source_files\lcd1602.h(6): error C141: syntax error near '8', expected ')'
-..\source_files\lcd1602.h(7): error C141: syntax error near 'x', expected ')'
-..\source_files\lcd1602.h(8): error C141: syntax error near 'x', expected ')'
-..\source_files\key.c(20): error C202: 'backup': undefined identifier
-..\source_files\key.c(21): error C202: 'backup': undefined identifier
-..\source_files\key.c(25): error C202: 'backup': undefined identifier
-..\source_files\key.c(80): error C141: syntax error near 'int', expected '__asm'
-..\source_files\key.c(80): error C202: 'i': undefined identifier
-..\source_files\key.c(81): error C202: 'i': undefined identifier
-compiling oled.c...
-..\source_files\app.h(4): error C141: syntax error near 'keyvalue', expected ')'
-..\source_files\lcd1602.h(6): error C141: syntax error near '8', expected ')'
-..\source_files\lcd1602.h(7): error C141: syntax error near 'x', expected ')'
-..\source_files\lcd1602.h(8): error C141: syntax error near 'x', expected ')'
-Target not created.
+..\source_files\key.c(21): warning C280: 'gg': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD1602_OPEN_CURSOR?LCD1602
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD1602_CLOSE_CURSOR?LCD1602
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD1602_DIS_ONECHAR?LCD1602
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?BEEP?KEY
+Program Size: data=65.1 xdata=0 code=1077
+creating hex file from "..\output\计算器"...
+"..\output\计算器" - 0 Error(s), 21 Warning(s).
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
