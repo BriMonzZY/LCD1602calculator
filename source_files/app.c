@@ -73,7 +73,7 @@ void key_13(uint8 keyvalue)  // 0
 	
 }
 
-void key_14(uint8 keyvalue)  // .
+void key_14(uint8 keyvalue)  // =  按下等于，转换后缀表达式，计算后缀表达式，输出结果
 {
 	
 }

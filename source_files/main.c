@@ -1,11 +1,11 @@
 /**
- * @project caculator
- * @author BriMonzZY (1610937885@qq.com)
- * @brief 
- * @version 0.1
- * @date 2021-03-21
- * @paltform STC89C52 & STC89C52RC
- * @copyright Copyright (c) 2021
+ * @project					LCD1602 caculator
+ * @author					BriMonzZY (1610937885@qq.com)
+ * @brief						caculator based on 51
+ * @version					0.1
+ * @date						2021-03-22
+ * @paltform				STC89C52 & STC89C52RC
+ * @copyright				Copyright (c) 2021
  * 
  *
  *
@@ -42,6 +42,9 @@ void timer0Init();
 bit keyjudge = 0;
 uint8 cursor1;
 uint8 cursor2; // LCD 第一行位置指针， 第二行位置指针
+float num_in_buff = 0.1;
+char str[40];  //存储输入的中缀表达式
+
 
 uchar backup[4][4] = { //初始化按键值备份
 			{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}

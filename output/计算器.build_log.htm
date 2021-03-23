@@ -44,6 +44,8 @@ compiling app.c...
 ..\source_files\app.c(81): warning C280: 'keyvalue': unreferenced local variable
 compiling key.c...
 ..\source_files\key.c(21): warning C280: 'gg': unreferenced local variable
+compiling postfix_expression.c...
+..\source_files\postfix_expression.c(27): warning C206: 'abort': missing function-prototype
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD1602_OPEN_CURSOR?LCD1602
@@ -53,9 +55,45 @@ linking...
     SEGMENT: ?PR?_LCD1602_DIS_ONECHAR?LCD1602
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?BEEP?KEY
-Program Size: data=65.1 xdata=0 code=1077
-creating hex file from "..\output\¼ÆËãÆ÷"...
-"..\output\¼ÆËãÆ÷" - 0 Error(s), 21 Warning(s).
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CHANGE?POSTFIX_EXPRESSION
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_INIT_MEMPOOL?INIT_MEM
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?KEY
+    LENGTH:  0022H
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: _DATA_GROUP_
+    LENGTH:  0004H
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?_INITSTACK?POSTFIX_EXPRESSION
+    LENGTH:  0003H
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?_STACKLENGTH?POSTFIX_EXPRESSION
+    LENGTH:  0003H
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  KEYVALUE
+    SEGMENT: ?DT?KEY
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  KEYSTA
+    SEGMENT: ?DT?KEY
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ABORT
+    MODULE:  ..\output\postfix_expression.obj (POSTFIX_EXPRESSION)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ABORT
+    MODULE:  ..\output\postfix_expression.obj (POSTFIX_EXPRESSION)
+    ADDRESS: 0E68H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ABORT
+    MODULE:  ..\output\postfix_expression.obj (POSTFIX_EXPRESSION)
+    ADDRESS: 0B8FH
+Program Size: data=171.2 xdata=8 code=4575
+Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

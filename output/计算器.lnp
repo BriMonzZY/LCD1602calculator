@@ -1,6 +1,7 @@
 "..\output\main.obj",
 "..\output\lcd1602.obj",
 "..\output\app.obj",
-"..\output\key.obj" 
+"..\output\key.obj",
+"..\output\postfix_expression.obj" 
 TO "..\output\¼ÆËãÆ÷" 
 PRINT(".\Listings\¼ÆËãÆ÷.m51")

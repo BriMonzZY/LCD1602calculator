@@ -77,6 +77,12 @@ void keyscan()
 	}
 }
 
+/**
+ * @brief 延时500us
+ * 
+ * @param  无 
+ * @return 无 
+ */
 void delay_500us(void)   //误差 -0.868055555556us
 {
     unsigned char a,b;
@@ -84,7 +90,12 @@ void delay_500us(void)   //误差 -0.868055555556us
         for(a=227;a>0;a--);
 }
 
-
+/**
+ * @brief 蜂鸣器
+ * 
+ * @param  无 
+ * @return 无 
+ */
 void beep()
 {
 	BUZZER = 0;

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   KEY                                                               03/22/2021 13:16:47 PAGE 1   
+C51 COMPILER V9.60.0.0   KEY                                                               03/23/2021 08:36:00 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE KEY
@@ -62,7 +62,7 @@ line level    source
   51   1        /*消抖并更新按键状态*/
   52   1        //将一行的 4 个按键值移入缓冲区
   53   1        keybuf[keyout][0] = (keybuf[keyout][0] << 1) | KEY_IN_1;
-C51 COMPILER V9.60.0.0   KEY                                                               03/22/2021 13:16:47 PAGE 2   
+C51 COMPILER V9.60.0.0   KEY                                                               03/23/2021 08:36:00 PAGE 2   
 
   54   1        keybuf[keyout][1] = (keybuf[keyout][1] << 1) | KEY_IN_2;
   55   1        keybuf[keyout][2] = (keybuf[keyout][2] << 1) | KEY_IN_3;
@@ -92,20 +92,31 @@ line level    source
   77   2        }
   78   1      }
   79          
-  80          void delay_500us(void)   //误差 -0.868055555556us
-  81          {
-  82   1          unsigned char a,b;
-  83   1          for(b=1;b>0;b--)
-  84   1              for(a=227;a>0;a--);
-  85   1      }
-  86          
-  87          
-  88          void beep()
-  89          {
-  90   1        BUZZER = 0;
-  91   1        delay_500us();
-  92   1        BUZZER = 1;
-  93   1      }
+  80          /**
+  81           * @brief 延时500us
+  82           * 
+  83           * @param  无 
+  84           * @return 无 
+  85           */
+  86          void delay_500us(void)   //误差 -0.868055555556us
+  87          {
+  88   1          unsigned char a,b;
+  89   1          for(b=1;b>0;b--)
+  90   1              for(a=227;a>0;a--);
+  91   1      }
+  92          
+  93          /**
+  94           * @brief 蜂鸣器
+  95           * 
+  96           * @param  无 
+  97           * @return 无 
+  98           */
+  99          void beep()
+ 100          {
+ 101   1        BUZZER = 0;
+ 102   1        delay_500us();
+ 103   1        BUZZER = 1;
+ 104   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
@@ -115,6 +126,8 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    PDATA SIZE       =   ----    ----
    DATA SIZE        =     34       3
    IDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.0.0   KEY                                                               03/23/2021 08:36:00 PAGE 3   
+
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 

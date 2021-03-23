@@ -396,6 +396,11 @@
               <FileType>1</FileType>
               <FilePath>..\source_files\key.c</FilePath>
             </File>
+            <File>
+              <FileName>postfix_expression.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source_files\postfix_expression.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -425,6 +430,11 @@
               <FileName>key.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\source_files\key.h</FilePath>
+            </File>
+            <File>
+              <FileName>postfix_expression.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\source_files\postfix_expression.h</FilePath>
             </File>
           </Files>
         </Group>
