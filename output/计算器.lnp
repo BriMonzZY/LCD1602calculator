@@ -4,4 +4,4 @@
 "..\output\key.obj",
 "..\output\postfix_expression.obj" 
 TO "..\output\¼ÆËãÆ÷" 
-PRINT(".\Listings\¼ÆËãÆ÷.m51")
+PRINT(".\Listings\¼ÆËãÆ÷.m51") RAMSIZE(256) 

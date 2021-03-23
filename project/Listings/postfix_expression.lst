@@ -1,192 +1,197 @@
-C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 08:36:00 PAGE 1   
+C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 13:30:16 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE POSTFIX_EXPRESSION
 OBJECT MODULE PLACED IN ..\output\postfix_expression.obj
-COMPILER INVOKED BY: D:\app\keilC51\C51\BIN\C51.EXE ..\source_files\postfix_expression.c OPTIMIZE(8,SPEED) BROWSE DEBUG 
-                    -OBJECTEXTEND PRINT(.\Listings\postfix_expression.lst) TABS(2) OBJECT(..\output\postfix_expression.obj)
+COMPILER INVOKED BY: D:\app\keilC51\C51\BIN\C51.EXE ..\source_files\postfix_expression.c COMPACT OPTIMIZE(8,SPEED) BROWS
+                    -E DEBUG OBJECTEXTEND PRINT(.\Listings\postfix_expression.lst) TABS(2) OBJECT(..\output\postfix_expression.obj)
 
 line level    source
 
    1          
    2          #include "config.h"
    3          #include "postfix_expression.h"
-   4          
-   5          #define INITSIZE  20
-   6          #define INCREMENT 10
-   7          #define MAXBUFFER 20
-   8          #define LEN  sizeof(Elemtype)
-   9          
-  10          /*栈的动态分配存储结构*/ 
-  11          typedef char Elemtype;
-  12          typedef struct{
-  13            Elemtype *base;
-  14            Elemtype *top;
-  15            int StackSize;
-  16          }SqStack;
-  17          
-  18          /**
-  19           * @brief 初始化栈
-  20           * 
-  21           * @param  无 
-  22           * @return 无 
-  23           */
-  24          void InitStack(SqStack *S)
-  25          {
-  26   1        S->base=(Elemtype*)malloc(LEN*INITSIZE);
-  27   1        assert(S->base !=NULL);
-*** WARNING C206 IN LINE 27 OF ..\source_files\postfix_expression.c: 'abort': missing function-prototype
-  28   1        S->top=S->base;
-  29   1        S->StackSize=INITSIZE;
-  30   1      }
-  31          
-  32          /**
-  33           * @brief 压栈操作
-  34           * 
-  35           * @param  *S
-  36           * @param  *c
-  37           * @return 无 
-  38           */
-  39          void PushStack(SqStack *S,Elemtype c)
-  40          {
-  41   1        if(S->top - S->base >= S->StackSize)
-  42   1        {
-  43   2          S->base=(Elemtype*)realloc(S->base,LEN*(S->StackSize+INCREMENT));
-  44   2          assert(S->base !=NULL);
-  45   2          S->top =S->base+S->StackSize;
-  46   2          S->StackSize+=INCREMENT;
-  47   2        }
-  48   1        *S->top++ = c;
-  49   1      }
-  50          
-  51          /**
-  52           * @brief 求栈长
-  53           * 
-C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 08:36:00 PAGE 2   
+   4          #include "main.h"
+   5          
+   6          #define INITSIZE  20
+   7          #define INCREMENT 10
+   8          #define MAXBUFFER 20
+   9          #define LEN  sizeof(Elemtype)
+  10          
+  11          
+  12          /*栈的动态分配存储结构*/ 
+  13          typedef char Elemtype;
+  14          struct SqStack{
+  15            Elemtype *base;
+  16            Elemtype *top;
+  17            int StackSize;
+  18          };
+  19          
+  20          
+  21          /**
+  22           * @brief 初始化栈
+  23           * 
+  24           * @param  无 
+  25           * @return 无 
+  26           */
+  27          void InitStack(struct SqStack *S)
+  28          {
+  29   1        S->base=(Elemtype*)malloc(LEN*INITSIZE);
+  30   1        assert(S->base !=NULL);
+*** WARNING C206 IN LINE 30 OF ..\source_files\postfix_expression.c: 'abort': missing function-prototype
+  31   1        S->top=S->base;
+  32   1        S->StackSize=INITSIZE;
+  33   1      }
+  34          
+  35          /**
+  36           * @brief 压栈操作
+  37           * 
+  38           * @param  *S
+  39           * @param  *c
+  40           * @return 无 
+  41           */
+  42          void PushStack(struct SqStack *S,Elemtype c)
+  43          {
+  44   1        if(S->top - S->base >= S->StackSize)
+  45   1        {
+  46   2          S->base=(Elemtype*)realloc(S->base,LEN*(S->StackSize+INCREMENT));
+  47   2          assert(S->base !=NULL);
+  48   2          S->top =S->base+S->StackSize;
+  49   2          S->StackSize+=INCREMENT;
+  50   2        }
+  51   1        *S->top++ = c;
+  52   1      }
+  53          
+C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 13:30:16 PAGE 2   
 
-  54           * @param  无 
-  55           * @return int
-  56           */
-  57          int StackLength(SqStack *S)
-  58          {
-  59   1        return (S->top - S->base);
-  60   1      }
-  61          
-  62          /**
-  63           * @brief 弹栈操作
-  64           * 
-  65           * @param   *S
-  66           * @param   *c
-  67           * @return int
-  68           */
-  69          int PopStack(SqStack *S,Elemtype *c)
-  70          {
-  71   1        if(!StackLength(S))
-  72   1        {
-  73   2          return 0;
-  74   2        }
-  75   1        *c=*--S->top;
-  76   1        return 1;
-  77   1      }
-  78          
-  79          
-  80          /**
-  81           * @brief 中缀转后缀函数
-  82           * 
-  83           * @param  *S
-  84           * @param  str[]
-  85           * @return 无 
-  86           */
-  87          void Change(SqStack *S,Elemtype str[])
-  88          {
-  89   1        int i=0;
-  90   1        Elemtype e;
-  91   1        InitStack(S);
-  92   1        while(str[i]!='\0')
-  93   1        {
-  94   2          while(isdigit(str[i])) 
-  95   2          {/*过滤数字字符，直接输出，直到下一位不是数字字符打印空格跳出循环 */
-  96   3            printf("%c",str[i++]);
-  97   3            if(!isdigit(str[i]))
-  98   3            {
-  99   4              printf(" ");
- 100   4            }
- 101   3          }
- 102   2          /*加减运算符优先级最低，如果栈顶元素为空则直接入栈，否则将栈中存储
- 103   2          的运算符全部弹栈，如果遇到左括号则停止，将弹出的左括号从新压栈，因为左
- 104   2          括号要和又括号匹配时弹出，这个后面单独讨论。弹出后将优先级低的运算符压入栈中*/
- 105   2          if(str[i]=='+'||str[i]=='-')
- 106   2          {
- 107   3            if(!StackLength(S))
- 108   3            {
- 109   4              PushStack(S,str[i]);
- 110   4            }
- 111   3            else
- 112   3            {
- 113   4              do
- 114   4              {
- 115   5                PopStack(S,&e);
-C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 08:36:00 PAGE 3   
+  54          /**
+  55           * @brief 求栈长
+  56           * 
+  57           * @param  无 
+  58           * @return int
+  59           */
+  60          int StackLength(struct SqStack *S)
+  61          {
+  62   1        return (S->top - S->base);
+  63   1      }
+  64          
+  65          /**
+  66           * @brief 弹栈操作
+  67           * 
+  68           * @param   *S
+  69           * @param   *c
+  70           * @return int
+  71           */
+  72          int PopStack(struct SqStack *S,Elemtype *c)
+  73          {
+  74   1        if(!StackLength(S))
+  75   1        {
+  76   2          return 0;
+  77   2        }
+  78   1        *c=*--S->top;
+  79   1        return 1;
+  80   1      }
+  81          
+  82          
+  83          /**
+  84           * @brief 中缀转后缀函数
+  85           * 
+  86           * @param  *S
+  87           * @param  str[]
+  88           * @return 无 
+  89           */
+  90          void Change(struct SqStack *S,Elemtype str[])
+  91          {
+  92   1        int i=0;
+  93   1        Elemtype e;
+  94   1        InitStack(S);
+  95   1        while(str[i]!='\0')
+  96   1        {
+  97   2          while(isdigit(str[i])) 
+  98   2          {/*过滤数字字符，直接输出，直到下一位不是数字字符打印空格跳出循环 */
+  99   3            printf("%c",str[i++]);
+ 100   3            if(!isdigit(str[i]))
+ 101   3            {
+ 102   4              printf(" ");
+ 103   4            }
+ 104   3          }
+ 105   2          /*加减运算符优先级最低，如果栈顶元素为空则直接入栈，否则将栈中存储
+ 106   2          的运算符全部弹栈，如果遇到左括号则停止，将弹出的左括号从新压栈，因为左
+ 107   2          括号要和又括号匹配时弹出，这个后面单独讨论。弹出后将优先级低的运算符压入栈中*/
+ 108   2          if(str[i]=='+'||str[i]=='-')
+ 109   2          {
+ 110   3            if(!StackLength(S))
+ 111   3            {
+ 112   4              PushStack(S,str[i]);
+ 113   4            }
+ 114   3            else
+ 115   3            {
+C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 13:30:16 PAGE 3   
 
- 116   5                if(e=='(')
- 117   5                {
- 118   6                  PushStack(S,e);
- 119   6                }
- 120   5                else
- 121   5                {
- 122   6                  printf("%c ",e);
- 123   6                }
- 124   5              }while( StackLength(S) && e != '(' );
- 125   4              
- 126   4              PushStack(S,str[i]);
- 127   4            }
- 128   3          }
- 129   2          /*当遇到右括号是，把括号里剩余的运算符弹出，直到匹配到左括号为止
- 130   2          左括号只弹出不打印（右括号也不压栈）*/
- 131   2          else if(str[i]==')')
- 132   2          {
- 133   3            PopStack(S,&e);
- 134   3            while(e!='(')
- 135   3            {
- 136   4              printf("%c ",e);
- 137   4              PopStack(S,&e);
- 138   4            }
- 139   3          }
- 140   2          /*乘、除、左括号都是优先级高的，直接压栈*/
- 141   2          else if(str[i]=='*'||str[i]=='/'||str[i]=='(')
- 142   2          {
- 143   3            PushStack(S,str[i]);
- 144   3          }
- 145   2          
- 146   2          else if(str[i]=='\0')
- 147   2          {
- 148   3            break;
- 149   3          }
- 150   2          
- 151   2          else
- 152   2          {
- 153   3            // printf("\n输入格式错误！\n");
- 154   3            return ;
- 155   3          }
- 156   2          i++;
- 157   2        }
- 158   1        /*最后把栈中剩余的运算符依次弹栈打印*/
- 159   1        while(StackLength(S))
- 160   1        {
- 161   2          PopStack(S,&e);
- 162   2          printf("%c ",e);
- 163   2        }
- 164   1      }
+ 116   4              do
+ 117   4              {
+ 118   5                PopStack(S,&e);
+ 119   5                if(e=='(')
+ 120   5                {
+ 121   6                  PushStack(S,e);
+ 122   6                }
+ 123   5                else
+ 124   5                {
+ 125   6                  printf("%c ",e);
+ 126   6                }
+ 127   5              }while( StackLength(S) && e != '(' );
+ 128   4              
+ 129   4              PushStack(S,str[i]);
+ 130   4            }
+ 131   3          }
+ 132   2          /*当遇到右括号是，把括号里剩余的运算符弹出，直到匹配到左括号为止
+ 133   2          左括号只弹出不打印（右括号也不压栈）*/
+ 134   2          else if(str[i]==')')
+ 135   2          {
+ 136   3            PopStack(S,&e);
+ 137   3            while(e!='(')
+ 138   3            {
+ 139   4              printf("%c ",e);
+ 140   4              PopStack(S,&e);
+ 141   4            }
+ 142   3          }
+ 143   2          /*乘、除、左括号都是优先级高的，直接压栈*/
+ 144   2          else if(str[i]=='*'||str[i]=='/'||str[i]=='(')
+ 145   2          {
+ 146   3            PushStack(S,str[i]);
+ 147   3          }
+ 148   2          
+ 149   2          else if(str[i]=='\0')
+ 150   2          {
+ 151   3            break;
+ 152   3          }
+ 153   2          
+ 154   2          else
+ 155   2          {
+ 156   3            // printf("\n输入格式错误！\n");
+ 157   3            return ;
+ 158   3          }
+ 159   2          i++;
+ 160   2        }
+ 161   1        /*最后把栈中剩余的运算符依次弹栈打印*/
+ 162   1        while(StackLength(S))
+ 163   1        {
+ 164   2          PopStack(S,&e);
+ 165   2          printf("%c ",e);
+ 166   2        }
+ 167   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    805    ----
+   CODE SIZE        =   1003    ----
    CONSTANT SIZE    =     95    ----
    XDATA SIZE       =   ----    ----
-   PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----      25
+   PDATA SIZE       =   ----      25
+   DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
+C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 13:30:16 PAGE 4   
+
 END OF MODULE INFORMATION.
 
 

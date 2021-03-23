@@ -1,10 +1,10 @@
-C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 08:36:00 PAGE 1   
+C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 13:30:16 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE APP
 OBJECT MODULE PLACED IN ..\output\app.obj
-COMPILER INVOKED BY: D:\app\keilC51\C51\BIN\C51.EXE ..\source_files\app.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PR
-                    -INT(.\Listings\app.lst) TABS(2) OBJECT(..\output\app.obj)
+COMPILER INVOKED BY: D:\app\keilC51\C51\BIN\C51.EXE ..\source_files\app.c COMPACT OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTE
+                    -XTEND PRINT(.\Listings\app.lst) TABS(2) OBJECT(..\output\app.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
 *** WARNING C280 IN LINE 41 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
   45          
   46          void key_8(uint8 keyvalue)  // 1
-C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 08:36:00 PAGE 2   
+C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 13:30:16 PAGE 2   
 
   47          {
   48   1        
@@ -99,7 +99,7 @@ line level    source
   74   1      }
 *** WARNING C280 IN LINE 71 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
   75          
-  76          void key_14(uint8 keyvalue)  // .
+  76          void key_14(uint8 keyvalue)  // =  按下等于，转换后缀表达式，计算后缀表达式，输出结果
   77          {
   78   1        
   79   1      }
@@ -126,7 +126,7 @@ line level    source
   98   1        {
   99   2          case 0: key_0(keyvalue); keyjudge = 1; break;
  100   2          case 1: key_1(keyvalue); keyjudge = 1; break; 
-C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 08:36:00 PAGE 3   
+C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 13:30:16 PAGE 3   
 
  101   2          case 2: key_2(keyvalue); keyjudge = 1; break; 
  102   2          case 3: key_3(keyvalue); keyjudge = 1; break;
@@ -148,11 +148,11 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    208    ----
+   CODE SIZE        =    240    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
-   PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----      16
+   PDATA SIZE       =   ----      16
+   DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

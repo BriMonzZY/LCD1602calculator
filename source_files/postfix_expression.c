@@ -1,19 +1,22 @@
 
 #include "config.h"
 #include "postfix_expression.h"
+#include "main.h"
 
 #define INITSIZE  20
 #define INCREMENT 10
 #define MAXBUFFER 20
 #define LEN  sizeof(Elemtype)
 
+
 /*栈的动态分配存储结构*/ 
 typedef char Elemtype;
-typedef struct{
+struct SqStack{
 	Elemtype *base;
 	Elemtype *top;
 	int StackSize;
-}SqStack;
+};
+
 
 /**
  * @brief 初始化栈
@@ -21,10 +24,10 @@ typedef struct{
  * @param  无 
  * @return 无 
  */
-void InitStack(SqStack *S)
+void InitStack(struct SqStack *S)
 {
 	S->base=(Elemtype*)malloc(LEN*INITSIZE);
-	assert(S->base !=NULL);
+	assert(S->base != NULL);
 	S->top=S->base;
 	S->StackSize=INITSIZE;
 }
@@ -36,7 +39,7 @@ void InitStack(SqStack *S)
  * @param  *c
  * @return 无 
  */
-void PushStack(SqStack *S,Elemtype c)
+void PushStack(struct SqStack *S,Elemtype c)
 {
 	if(S->top - S->base >= S->StackSize)
 	{
@@ -54,7 +57,7 @@ void PushStack(SqStack *S,Elemtype c)
  * @param  无 
  * @return int
  */
-int StackLength(SqStack *S)
+int StackLength(struct SqStack *S)
 {
 	return (S->top - S->base);
 }
@@ -66,7 +69,7 @@ int StackLength(SqStack *S)
  * @param		*c
  * @return int
  */
-int PopStack(SqStack *S,Elemtype *c)
+int PopStack(struct SqStack *S,Elemtype *c)
 {
 	if(!StackLength(S))
 	{
@@ -84,7 +87,7 @@ int PopStack(SqStack *S,Elemtype *c)
  * @param  str[]
  * @return 无 
  */
-void Change(SqStack *S,Elemtype str[])
+void Change(struct SqStack *S,Elemtype str[])
 {
 	int i=0;
 	Elemtype e;

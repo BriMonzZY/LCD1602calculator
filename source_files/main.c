@@ -14,7 +14,7 @@
  * 7			8			9			÷
  * 4			5			6			x
  * 1			2			3			-
- * 退格	  0			.			+
+ * 退格	  0			=			+
  *
  *
  *
@@ -49,6 +49,27 @@ char str[40];  //存储输入的中缀表达式
 uchar backup[4][4] = { //初始化按键值备份
 			{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}
 };
+
+
+#define INITSIZE  20
+#define INCREMENT 10
+#define MAXBUFFER 20
+#define LEN  sizeof(Elemtype)
+/*栈的动态分配存储结构*/ 
+//typedef char Elemtype;
+//struct SqStack{
+//	Elemtype *base;
+//	Elemtype *top;
+//	int StackSize;
+//};
+
+typedef struct SqStack{
+	Elemtype *base;
+	Elemtype *top;
+	int StackSize;
+}SqStack;
+
+SqStack S;
 
 
 /**

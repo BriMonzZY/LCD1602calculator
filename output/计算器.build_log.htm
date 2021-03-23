@@ -19,11 +19,13 @@ CPU DLL:         S8051.DLL V3.122.0.0
 Dialog DLL:      DP51.DLL V2.67.0.0 
 <h2>Project:</h2>
 D:\_软件项目\51\project\LCD1602计算器\project\计算器.uvproj
-Project File Date:  03/22/2021
+Project File Date:  03/23/2021
 
 <h2>Output:</h2>
 Rebuild target 'Target 1'
 compiling main.c...
+..\source_files\main.c(67): error C141: syntax error near 'Elemtype', expected 'bit'
+..\source_files\main.c(67): error C129: missing ';' before '*'
 compiling lcd1602.c...
 compiling app.c...
 ..\source_files\app.c(7): warning C280: 'keyvalue': unreferenced local variable
@@ -45,54 +47,7 @@ compiling app.c...
 compiling key.c...
 ..\source_files\key.c(21): warning C280: 'gg': unreferenced local variable
 compiling postfix_expression.c...
-..\source_files\postfix_expression.c(27): warning C206: 'abort': missing function-prototype
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD1602_OPEN_CURSOR?LCD1602
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD1602_CLOSE_CURSOR?LCD1602
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_LCD1602_DIS_ONECHAR?LCD1602
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?BEEP?KEY
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHANGE?POSTFIX_EXPRESSION
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_INIT_MEMPOOL?INIT_MEM
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?KEY
-    LENGTH:  0022H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0004H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?_INITSTACK?POSTFIX_EXPRESSION
-    LENGTH:  0003H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?_STACKLENGTH?POSTFIX_EXPRESSION
-    LENGTH:  0003H
-*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
-    SYMBOL:  KEYVALUE
-    SEGMENT: ?DT?KEY
-*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
-    SYMBOL:  KEYSTA
-    SEGMENT: ?DT?KEY
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ABORT
-    MODULE:  ..\output\postfix_expression.obj (POSTFIX_EXPRESSION)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  ABORT
-    MODULE:  ..\output\postfix_expression.obj (POSTFIX_EXPRESSION)
-    ADDRESS: 0E68H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  ABORT
-    MODULE:  ..\output\postfix_expression.obj (POSTFIX_EXPRESSION)
-    ADDRESS: 0B8FH
-Program Size: data=171.2 xdata=8 code=4575
+..\source_files\postfix_expression.c(30): warning C206: 'abort': missing function-prototype
 Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
