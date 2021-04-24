@@ -51,10 +51,10 @@ uchar backup[4][4] = { //初始化按键值备份
 };
 
 
-#define INITSIZE  20
-#define INCREMENT 10
-#define MAXBUFFER 20
-#define LEN  sizeof(Elemtype)
+//#define INITSIZE  20
+//#define INCREMENT 10
+//#define MAXBUFFER 20
+//#define LEN  sizeof(Elemtype)
 /*栈的动态分配存储结构*/ 
 //typedef char Elemtype;
 //struct SqStack{
@@ -63,13 +63,7 @@ uchar backup[4][4] = { //初始化按键值备份
 //	int StackSize;
 //};
 
-typedef struct SqStack{
-	Elemtype *base;
-	Elemtype *top;
-	int StackSize;
-}SqStack;
 
-SqStack S;
 
 
 /**
@@ -111,7 +105,7 @@ void timer0() interrupt 1
 void timer0Init()
 {
 	EA = 1;
-	TMOD = 0x01; //设置 T0 为模式 1
+	TMOD = 0x00; //设置 T0 为模式 1
 	TH0 = 0xfc; //为 T0 赋初值 0xFC67，定时 1ms
 	TL0 = 0x66;
 	ET0 = 1; //使能 T0 中断

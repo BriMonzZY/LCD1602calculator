@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
-#include <assert.h>
+//#include <assert.h>
 
 /*用户文件*/
 //#include "main.h"

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 13:30:16 PAGE 1   
+C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 18:39:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE APP
@@ -16,146 +16,146 @@ line level    source
    6          
    7          void key_0(uint8 keyvalue)  // 7
    8          {
-   9   1        
-  10   1      }
-*** WARNING C280 IN LINE 7 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  11          
-  12          void key_1(uint8 keyvalue)  // 8
-  13          {
-  14   1      
-  15   1      }
-*** WARNING C280 IN LINE 12 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  16          
-  17          void key_2(uint8 keyvalue)  // 9
-  18          {
-  19   1        
-  20   1      }
-*** WARNING C280 IN LINE 17 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  21          
-  22          void key_3(uint8 keyvalue)  // ÷
-  23          {
-  24   1        
-  25   1      }
-*** WARNING C280 IN LINE 22 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  26          void key_4(uint8 keyvalue)  // 4
-  27          {
-  28   1        
+   9   1        LCD1602_Clear_Screen();
+  10   1        LCD1602_Dis_OneChar(0, 0, keyvalue);
+  11   1      }
+  12          
+  13          void key_1(uint8 keyvalue)  // 8
+  14          {
+  15   1        LCD1602_Clear_Screen();
+  16   1        LCD1602_Dis_OneChar(0, 0, keyvalue);
+  17   1      }
+  18          
+  19          void key_2(uint8 keyvalue)  // 9
+  20          {
+  21   1        LCD1602_Clear_Screen();
+  22   1        LCD1602_Dis_OneChar(0, 0, keyvalue);
+  23   1      }
+  24          
+  25          void key_3(uint8 keyvalue)  // ÷
+  26          {
+  27   1        LCD1602_Clear_Screen();
+  28   1        LCD1602_Dis_OneChar(0, 0, keyvalue);
   29   1      }
-*** WARNING C280 IN LINE 26 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  30          
-  31          void key_5(uint8 keyvalue)  // 5
-  32          {
-  33   1        
-  34   1      }
-*** WARNING C280 IN LINE 31 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  35          
-  36          void key_6(uint8 keyvalue)  // 6
-  37          {
-  38   1        
-  39   1      }
-*** WARNING C280 IN LINE 36 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  40          
-  41          void key_7(uint8 keyvalue)  // ×
-  42          {
-  43   1        
-  44   1      }
-*** WARNING C280 IN LINE 41 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  45          
-  46          void key_8(uint8 keyvalue)  // 1
-C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 13:30:16 PAGE 2   
+  30          void key_4(uint8 keyvalue)  // 4
+  31          {
+  32   1        
+  33   1      }
+*** WARNING C280 IN LINE 30 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  34          
+  35          void key_5(uint8 keyvalue)  // 5
+  36          {
+  37   1        
+  38   1      }
+*** WARNING C280 IN LINE 35 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  39          
+  40          void key_6(uint8 keyvalue)  // 6
+  41          {
+  42   1        
+  43   1      }
+*** WARNING C280 IN LINE 40 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  44          
+  45          void key_7(uint8 keyvalue)  // ×
+  46          {
+  47   1        
+  48   1      }
+*** WARNING C280 IN LINE 45 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  49          
+  50          void key_8(uint8 keyvalue)  // 1
+C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 18:39:28 PAGE 2   
 
-  47          {
-  48   1        
-  49   1      }
-*** WARNING C280 IN LINE 46 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  50          
-  51          void key_9(uint8 keyvalue)  // 2
-  52          {
-  53   1        
-  54   1      }
-*** WARNING C280 IN LINE 51 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  55          
-  56          void key_10(uint8 keyvalue)  // 3
-  57          {
-  58   1        
-  59   1      }
-*** WARNING C280 IN LINE 56 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  60          
-  61          void key_11(uint8 keyvalue)  // -
-  62          {
-  63   1        
-  64   1      }
-*** WARNING C280 IN LINE 61 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  65          
-  66          void key_12(uint8 keyvalue)  // back
-  67          {
-  68   1        
-  69   1      }
-*** WARNING C280 IN LINE 66 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  70          
-  71          void key_13(uint8 keyvalue)  // 0
-  72          {
-  73   1        
-  74   1      }
-*** WARNING C280 IN LINE 71 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  75          
-  76          void key_14(uint8 keyvalue)  // =  按下等于，转换后缀表达式，计算后缀表达式，输出结果
-  77          {
-  78   1        
-  79   1      }
-*** WARNING C280 IN LINE 76 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  80          
-  81          void key_15(uint8 keyvalue)  // +
-  82          {
-  83   1        
-  84   1      }
-*** WARNING C280 IN LINE 81 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
-  85          
-  86          
-  87          
-  88          
+  51          {
+  52   1        
+  53   1      }
+*** WARNING C280 IN LINE 50 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  54          
+  55          void key_9(uint8 keyvalue)  // 2
+  56          {
+  57   1        
+  58   1      }
+*** WARNING C280 IN LINE 55 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  59          
+  60          void key_10(uint8 keyvalue)  // 3
+  61          {
+  62   1        
+  63   1      }
+*** WARNING C280 IN LINE 60 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  64          
+  65          void key_11(uint8 keyvalue)  // -
+  66          {
+  67   1        
+  68   1      }
+*** WARNING C280 IN LINE 65 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  69          
+  70          void key_12(uint8 keyvalue)  // back
+  71          {
+  72   1        
+  73   1      }
+*** WARNING C280 IN LINE 70 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  74          
+  75          void key_13(uint8 keyvalue)  // 0
+  76          {
+  77   1        
+  78   1      }
+*** WARNING C280 IN LINE 75 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  79          
+  80          void key_14(uint8 keyvalue)  // =  按下等于，转换后缀表达式，计算后缀表达式，输出结果
+  81          {
+  82   1        
+  83   1      }
+*** WARNING C280 IN LINE 80 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
+  84          
+  85          void key_15(uint8 keyvalue)  // +
+  86          {
+  87   1        
+  88   1      }
+*** WARNING C280 IN LINE 85 OF ..\source_files\app.c: 'keyvalue': unreferenced local variable
   89          
-  90          /**
-  91           * @brief   按键功能映射函数
-  92           * 
-  93           * @param   keyvalue 
-  94           * @return  无
-  95           */
-  96          void KeyAction(uchar keyvalue) {
-  97   1        switch (keyvalue)
-  98   1        {
-  99   2          case 0: key_0(keyvalue); keyjudge = 1; break;
- 100   2          case 1: key_1(keyvalue); keyjudge = 1; break; 
-C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 13:30:16 PAGE 3   
+  90          
+  91          
+  92          
+  93          
+  94          /**
+  95           * @brief   按键功能映射函数
+  96           * 
+  97           * @param   keyvalue 
+  98           * @return  无
+  99           */
+ 100          void KeyAction(uchar keyvalue) {
+ 101   1        switch (keyvalue)
+ 102   1        {
+ 103   2          case 0: key_0(keyvalue); keyjudge = 1; break;
+ 104   2          case 1: key_1(keyvalue); keyjudge = 1; break; 
+C51 COMPILER V9.60.0.0   APP                                                               03/23/2021 18:39:28 PAGE 3   
 
- 101   2          case 2: key_2(keyvalue); keyjudge = 1; break; 
- 102   2          case 3: key_3(keyvalue); keyjudge = 1; break;
- 103   2          case 4: key_4(keyvalue); keyjudge = 1; break;
- 104   2          case 5: key_5(keyvalue); keyjudge = 1; break;
- 105   2          case 6: key_6(keyvalue); keyjudge = 1; break;
- 106   2          case 7: key_7(keyvalue); keyjudge = 1; break;
- 107   2          case 8: key_8(keyvalue); keyjudge = 1; break;
- 108   2          case 9: key_9(keyvalue); keyjudge = 1; break;
- 109   2          case 10: key_10(keyvalue); keyjudge = 1; break;
- 110   2          case 11: key_11(keyvalue); keyjudge = 1; break;
- 111   2          case 12: key_12(keyvalue); keyjudge = 1; break;
- 112   2          case 13: key_13(keyvalue); keyjudge = 1; break;
- 113   2          case 14: key_14(keyvalue); keyjudge = 1; break;
- 114   2          case 15: key_15(keyvalue); keyjudge = 1; break;   
- 115   2          default: break;
- 116   2        }
- 117   1      }
+ 105   2          case 2: key_2(keyvalue); keyjudge = 1; break; 
+ 106   2          case 3: key_3(keyvalue); keyjudge = 1; break;
+ 107   2          case 4: key_4(keyvalue); keyjudge = 1; break;
+ 108   2          case 5: key_5(keyvalue); keyjudge = 1; break;
+ 109   2          case 6: key_6(keyvalue); keyjudge = 1; break;
+ 110   2          case 7: key_7(keyvalue); keyjudge = 1; break;
+ 111   2          case 8: key_8(keyvalue); keyjudge = 1; break;
+ 112   2          case 9: key_9(keyvalue); keyjudge = 1; break;
+ 113   2          case 10: key_10(keyvalue); keyjudge = 1; break;
+ 114   2          case 11: key_11(keyvalue); keyjudge = 1; break;
+ 115   2          case 12: key_12(keyvalue); keyjudge = 1; break;
+ 116   2          case 13: key_13(keyvalue); keyjudge = 1; break;
+ 117   2          case 14: key_14(keyvalue); keyjudge = 1; break;
+ 118   2          case 15: key_15(keyvalue); keyjudge = 1; break;   
+ 119   2          default: break;
+ 120   2        }
+ 121   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    240    ----
+   CODE SIZE        =    355    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
-   PDATA SIZE       =   ----      16
+   PDATA SIZE       =   ----      17
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  16 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  12 WARNING(S),  0 ERROR(S)

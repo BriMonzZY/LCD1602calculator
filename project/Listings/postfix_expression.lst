@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 13:30:16 PAGE 1   
+C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 18:39:29 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE POSTFIX_EXPRESSION
@@ -37,8 +37,7 @@ line level    source
   27          void InitStack(struct SqStack *S)
   28          {
   29   1        S->base=(Elemtype*)malloc(LEN*INITSIZE);
-  30   1        assert(S->base !=NULL);
-*** WARNING C206 IN LINE 30 OF ..\source_files\postfix_expression.c: 'abort': missing function-prototype
+  30   1        //assert(S->base != NULL);
   31   1        S->top=S->base;
   32   1        S->StackSize=INITSIZE;
   33   1      }
@@ -55,16 +54,16 @@ line level    source
   44   1        if(S->top - S->base >= S->StackSize)
   45   1        {
   46   2          S->base=(Elemtype*)realloc(S->base,LEN*(S->StackSize+INCREMENT));
-  47   2          assert(S->base !=NULL);
+  47   2          //assert(S->base !=NULL);
   48   2          S->top =S->base+S->StackSize;
   49   2          S->StackSize+=INCREMENT;
   50   2        }
   51   1        *S->top++ = c;
   52   1      }
   53          
-C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 13:30:16 PAGE 2   
-
   54          /**
+C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 18:39:29 PAGE 2   
+
   55           * @brief «Û’ª≥§
   56           * 
   57           * @param  Œﬁ 
@@ -126,9 +125,9 @@ line level    source
  113   4            }
  114   3            else
  115   3            {
-C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 13:30:16 PAGE 3   
-
  116   4              do
+C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 18:39:29 PAGE 3   
+
  117   4              {
  118   5                PopStack(S,&e);
  119   5                if(e=='(')
@@ -183,16 +182,16 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1003    ----
-   CONSTANT SIZE    =     95    ----
+   CODE SIZE        =    910    ----
+   CONSTANT SIZE    =      9    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----      25
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
-C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 13:30:16 PAGE 4   
-
 END OF MODULE INFORMATION.
 
+C51 COMPILER V9.60.0.0   POSTFIX_EXPRESSION                                                03/23/2021 18:39:29 PAGE 4   
 
-C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

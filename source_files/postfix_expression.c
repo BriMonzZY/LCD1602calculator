@@ -27,7 +27,7 @@ struct SqStack{
 void InitStack(struct SqStack *S)
 {
 	S->base=(Elemtype*)malloc(LEN*INITSIZE);
-	assert(S->base != NULL);
+	//assert(S->base != NULL);
 	S->top=S->base;
 	S->StackSize=INITSIZE;
 }
@@ -44,7 +44,7 @@ void PushStack(struct SqStack *S,Elemtype c)
 	if(S->top - S->base >= S->StackSize)
 	{
 		S->base=(Elemtype*)realloc(S->base,LEN*(S->StackSize+INCREMENT));
-		assert(S->base !=NULL);
+		//assert(S->base !=NULL);
 		S->top =S->base+S->StackSize;
 		S->StackSize+=INCREMENT;
 	}

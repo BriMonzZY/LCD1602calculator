@@ -6,22 +6,26 @@
 
 void key_0(uint8 keyvalue)  // 7
 {
-	
+	LCD1602_Clear_Screen();
+	LCD1602_Dis_OneChar(0, 0, keyvalue);
 }
 
 void key_1(uint8 keyvalue)  // 8
 {
-
+	LCD1602_Clear_Screen();
+	LCD1602_Dis_OneChar(0, 0, keyvalue);
 }
 
 void key_2(uint8 keyvalue)  // 9
 {
-	
+	LCD1602_Clear_Screen();
+	LCD1602_Dis_OneChar(0, 0, keyvalue);
 }
 
 void key_3(uint8 keyvalue)  // ¡Â
 {
-	
+	LCD1602_Clear_Screen();
+	LCD1602_Dis_OneChar(0, 0, keyvalue);
 }
 void key_4(uint8 keyvalue)  // 4
 {
